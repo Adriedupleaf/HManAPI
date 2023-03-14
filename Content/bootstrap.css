@@ -5031,12 +5031,61 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+.test {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+    .test h1,
+    .test .h1 {
+        color: inherit;
+    }
+
+    .test p {
+        margin-bottom: 15px;
+        font-size: 21px;
+        font-weight: 200;
+    }
+
+    .test > hr {
+        border-top-color: #d5d5d5;
+    }
+
+.container .test,
+.container-fluid .test {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 6px;
+}
+
+.test .container {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .test {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .container .test,
+    .container-fluid .test {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+
+    .test h1,
+    .test .h1 {
+        font-size: 63px;
+    }
+}
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eeeeee;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
 }
 .jumbotron h1,
 .jumbotron .h1 {
