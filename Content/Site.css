@@ -22,7 +22,17 @@ select,
 textarea {
     max-width: 280px;
 }
-
+.mascot-container{
+     display: none;
+     position: relative;
+     top:0;
+     left:100%;
+     width:99%;
+     border: .lem solid #aaa;
+     background: #eee;
+     border-radius: 3px;
+     z-index: 99;
+}
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
     background-color: #777;
