@@ -10,8 +10,8 @@
 </head>
 <body>
 
-    <button id="background-button">Color</button>
-
+   
+    <button id="background-button" class="my-button-class">Color</button>
     <script>
         function toggleBackgroundColor() {
             var body = document.getElementsByTagName("body")[0];
@@ -44,6 +44,7 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+
     </div>
     <div class="container body-content">
         @RenderBody()
