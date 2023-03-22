@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,19 +23,26 @@ select,
 textarea {
     max-width: 280px;
 }
-.mascot-container{
-     display: none;
-     position: relative;
-     top:0;
-     left:100%;
-     width:99%;
-     border: .lem solid #aaa;
-     background: #eee;
-     border-radius: 3px;
-     z-index: 99;
-}
+
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
     background-color: #777;
     border-color: #fff
 }
+
+
+.my-button-class {
+    border-radius: 10px;
+    color: #2219E5;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.my-button-class:hover {
+    background-color: #fff;
+    color: #2219E5
+}
+

@@ -9,22 +9,6 @@
 
 </head>
 <body>
-
-    <button id="background-button">Color</button>
-
-    <script>
-        function toggleBackgroundColor() {
-            var body = document.getElementsByTagName("body")[0];
-            if (body.style.backgroundColor === "white") {
-                body.style.backgroundColor = "black";
-                body.style.color = "white";
-            } else {
-                body.style.backgroundColor = "white";
-                body.style.color = "black";
-            }
-        }
-        document.getElementById("background-button").addEventListener("click", toggleBackgroundColor);
-    </script>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -44,6 +28,7 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+
     </div>
     <div class="container body-content">
         @RenderBody()
@@ -64,7 +49,7 @@
         <div Image MyImage>
         <img src="~/Images/mascot.gif" alt="i" />
         </div>
-            
+
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
