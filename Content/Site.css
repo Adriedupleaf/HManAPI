@@ -2,20 +2,6 @@
     padding-top: 50px;
     padding-bottom: 20px;
 
-    .my-button-class {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-    .my-button-class:hover {
-        background-color: #fff;
-        color: #ff0000;
-    }
-
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -43,7 +29,7 @@ textarea {
      top:0;
      left:100%;
      width:99%;
-     border: .lem solid #aaa;
+     border: lem solid #aaa;
      background: #eee;
      border-radius: 3px;
      z-index: 99;
