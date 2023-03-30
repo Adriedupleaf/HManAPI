@@ -9,14 +9,10 @@
 
 </head>
 <body class="accordion-body">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-md bg-light">
         <div class="container-fluid">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
                     </li>
@@ -26,12 +22,15 @@
                     <li class="nav-item">
                         @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Switch Theme</a>
-                    </li>
                 </ul>
-                    @Html.Partial("_LoginPartial")
             </div>
+            <div class="mx-auto order-0">
+                @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            @Html.Partial("_LoginPartial")
         </div>
     </nav>
     <div class="container body-content">
