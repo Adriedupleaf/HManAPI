@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - HangMan</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -24,15 +24,25 @@
                     </li>
                 </ul>
             </div>
-            <div class="mx-auto order-0">
-                @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="me-sm-3">
+                <div class="switch">
+                    <label for="toggle">
+                        <input id="toggle" class="toggle-switch" type="checkbox">
+                        <div class="sun-moon"><div class="dots"></div></div>
+                        <div class="background"><div class="stars1"></div><div class="stars2"></div></div>
+                    </label>
+                </div>
             </div>
-            @Html.Partial("_LoginPartial")
-        </div>
-    </nav>
+                <div class="mx-auto ">
+                    @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+</nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -52,7 +62,7 @@
         </div>
 
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - HangMan</p>
         </footer>
     </div>
 
