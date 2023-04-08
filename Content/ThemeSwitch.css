@@ -1,5 +1,4 @@
-﻿
-.switch {
+﻿.switch {
     position: relative;
     overflow: hidden;
     width: 3.25rem;
@@ -149,6 +148,8 @@
 /* Transition to Sun */
 
 .switch input:checked ~ .sun-moon {
+    /*add reference to ThemeSwitch.js*/
+    
     left: calc(100% - 2rem);
     background: #F5EC59;
     border-color: #E7C65C;
