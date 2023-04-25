@@ -26,7 +26,8 @@ namespace HManAPI
             bundles.Add(new Bundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
-                      "~/Content/ThemeSwitch.css"));
+                      "~/Content/ThemeSwitch.css",
+                      "~/Content/About.css"));
         }
     }
 }
