@@ -26,5 +26,12 @@ namespace HManAPI.Controllers
 
             return View();
         }
-    }
+
+        public ActionResult HMan()
+        {
+            ViewBag.Message = "HangMan";
+            return View();
+        }
+
+        }
 }
