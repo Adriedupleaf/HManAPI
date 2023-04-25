@@ -261,14 +261,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="Content\About.css" />
-=======
-    <Content Include="App_Data\aspnet-HManAPI-20230228104634.mdf" />
-    <Content Include="App_Data\aspnet-HManAPI-20230228104634_log.ldf">
-      <DependentUpon>aspnet-HManAPI-20230228104634.mdf</DependentUpon>
-    </Content>
-
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -369,6 +362,7 @@
     <Content Include="Scripts\jquery-3.6.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="App_LocalResources\" />
     <Folder Include="Images\" />
   </ItemGroup>
