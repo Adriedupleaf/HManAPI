@@ -1,0 +1,8 @@
+.input-box {
+     width: 20px;
+     max-width: 85%;
+     margin: 0 auto;
+     display: static;
+     align-items: center;
+     justify-content: space-around;
+}

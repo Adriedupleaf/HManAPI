@@ -278,6 +278,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Game.css" />
     <Content Include="Content\ThemeSwitch.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -360,6 +361,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-3.6.4.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.4.min.map" />
+    <Content Include="Views\Home\HMan.cshtml" />
+    <Content Include="Views\Home\How_To_Play.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
