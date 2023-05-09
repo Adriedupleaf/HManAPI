@@ -4,15 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - HangMan</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
 
 </head>
 <body class="accordion-body">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" id ="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
         <div class="container-fluid">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav me-auto">
@@ -31,23 +27,23 @@
                 <div class="switch">
                     <label for="toggle">
                         <input id="toggle" class="toggle-switch" type="checkbox" />
-                            <div class="sun-moon">
-                                <div class="dots"></div>
-                            </div>
-                            <div class="background"><div class="stars1"></div><div class="stars2"></div></div>
+                        <div class="sun-moon">
+                            <div class="dots"></div>
+                        </div>
+                        <div class="background"><div class="stars1"></div><div class="stars2"></div></div>
                     </label>
                 </div>
             </div>
-                <div class="mx-auto ">
-                    @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                @Html.Partial("_LoginPartial")
+            <div class="mx-auto ">
+                @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-</nav>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
 
@@ -55,5 +51,10 @@
             <p>&copy; @DateTime.Now.Year - HangMan</p>
         </footer>
     </div>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
