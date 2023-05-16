@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace HManAPI.Domain.Entities.User
 {
-     internal class Class1
+     public class ULoginResponse
      {
+          public bool Status { get; set; }
+          public string StatusMsg { get; set; }
      }
 }

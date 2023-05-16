@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace HManAPI.Domain
 {
-    public class Class1
-    {
-    }
+     public enum URoles
+     {
+          Gueser,
+          Player,
+          Owner
+     }
 }
