@@ -32,6 +32,7 @@ namespace HManAPI.Controllers
             {
                 var auth = new FirebaseAuthProvider(new FirebaseConfig(WebApiConfig.getApiKey()));
                 var a = await auth.CreateUserWithEmailAndPasswordAsync(model.Email, model.Password, model.Email, false);
+                return RedirectToAction("Index", "Login");
                 //ModelState.AddModelError(string.Empty, "Please Verify your email then login Plz.");
             }
             catch (Exception ex)

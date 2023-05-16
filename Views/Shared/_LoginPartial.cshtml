@@ -1,9 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Get, new { id = "logoutForm", @class = "navbar-right" }))
     {
-        @Html.AntiForgeryToken()
+        //@Html.AntiForgeryToken()
 
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ms-auto">
@@ -24,7 +24,7 @@ else
                     <li class="nav-item">
                         @Html.ActionLink("Register", "Index", "Register", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })                    </li>
                     <li class="nav-item">
-                        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })
+                        @Html.ActionLink("Log in", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })
                     </li>
                 </ul>
             </div>
