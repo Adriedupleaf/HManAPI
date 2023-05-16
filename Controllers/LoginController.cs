@@ -20,12 +20,14 @@ namespace HManAPI.Controllers
 {
     public class LoginController : Controller
     {
-        public LoginController()
-        {
-        }
+          private readonly ISessionBL _session;
+          public LoginController()
+          {
+               _session = new BussinesLogic().GetSessionBL();
+          }
 
-        // GET: Login
-        [AllowAnonymous]
+          // GET: Login
+          [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
