@@ -20,18 +20,12 @@ namespace HManAPI.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public ActionResult How_To_Play()
         {
             ViewBag.Message = "How To play page.";
             return View();
         }
-
+        [Authorize]
      public ActionResult HMan()
         {
             ViewBag.Message = "HangMan";
