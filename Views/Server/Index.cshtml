@@ -28,9 +28,9 @@
                     }
                </div>
           </section> *@
-     <div class="data">
-          <a href="#" class="hire">Create Server</a>
-     </div>
+    <div class="data">
+        @Html.ActionLink("Create Server", "CreateServer", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg btn-block " })
+    </div>
      <ul class="list-group">
          @if (Model != null)
          {
@@ -38,7 +38,7 @@
          {
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         @server.name 
-                        <span class="badge badge-primary badge-pill badge-custom">
+                        <span class="badge badge-primary badge-pill badge-custom ">
                             @if (server.isPublic == true)
                             {
                                 @Html.ActionLink("Join", "Play", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm" })

@@ -38,6 +38,11 @@ namespace HManAPI.Controllers
             
             return View();
         }
+        public ActionResult CreateServer()
+        {
+            
+            return View();
+        }
         public void updateServers()
         {
             client = new FireSharp.FirebaseClient(config);

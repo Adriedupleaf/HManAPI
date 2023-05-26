@@ -397,6 +397,7 @@
     <Content Include="Views\Server\Index.cshtml" />
     <Content Include="Views\Home\How_To_Play.cshtml" />
     <Content Include="Views\Server\Play.cshtml" />
+    <Content Include="Views\Server\CreateServer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
