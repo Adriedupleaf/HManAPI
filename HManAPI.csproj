@@ -314,6 +314,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Game.css" />
+    <Content Include="Content\Keyboard.css" />
     <Content Include="Content\ThemeSwitch.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -349,6 +350,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Scripts\jquery-3.6.4.intellisense.js" />
+    <Content Include="Scripts\Keyboard.js" />
     <Content Include="Scripts\ThemeSwitch.js" />
     <Content Include="Scripts\jquery-3.6.4.js" />
     <Content Include="Scripts\jquery-3.6.4.min.js" />
