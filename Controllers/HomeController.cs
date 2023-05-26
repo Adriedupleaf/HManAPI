@@ -26,11 +26,16 @@ namespace HManAPI.Controllers
             return View();
         }
         [Authorize]
-     public ActionResult HMan()
+        public ActionResult HMan()
         {
+            List<string> list = new List<string>()
+            {
+                 "Name1",
+                 "Name2"
+            };
             ViewBag.Message = "HangMan";
-            return View();
+            return View(list);
         }
 
-        }
+     }
 }

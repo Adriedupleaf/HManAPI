@@ -27,7 +27,8 @@ namespace HManAPI
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
                       "~/Content/ThemeSwitch.css",
+                      "~/Content/Game.css",
                       "~/Content/About.css"));
-        }
+          }
     }
 }

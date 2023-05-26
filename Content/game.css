@@ -1,8 +1,27 @@
-.input-box {
-     width: 20px;
-     max-width: 85%;
-     margin: 0 auto;
-     display: static;
-     align-items: center;
-     justify-content: space-around;
+.hire {
+     font-size: 18px;
+     background: #4070f4;
+     color: #fff;
+     text-decoration: none;
+     border: none;
+     padding: 8px 25px;
+     border-radius: 6px;
+     transition: 0.5s;
+}
+
+.hire:hover {
+     background: #000;
+     order: 1px solid #4070f4;
+}
+.data {
+     margin-bottom: 15px;
+}
+
+.list-group-item {
+     padding: 10px;
+
+}
+
+.badge-custom {
+     --bs-badge-color: black;
 }

@@ -1,4 +1,7 @@
+@model List<string> 
+
 @{
+
      ViewBag.Title = "Game";
 
 }
@@ -11,19 +14,46 @@
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <!--<title> An About Us Page | CoderGirl </title>-->
      <!---Custom Css File!--->
-     <link rel="stylesheet" href="About.css">
+     @*<link rel="stylesheet" href="About.css">*@
      <link rel="stylesheet" href="Game.css">
 </head>
 <body>
-     <section class="about-us">
-          <div class="about">
-               @foreach(var letter in ViewBag.Message)
-               {
-                    <div class="input-box">
-                         <input type="text" />
-                    </div>
-               }
-          </div>
-     </section>
+     @*<section class="about-us">
+               <div class="about">
+                    @foreach(var letter in ViewBag.Message)
+                    {
+                         <div class="input-box">
+                              <input type="text" />
+                         </div>
+                    }
+               </div>
+          </section> *@
+     <div class="data">
+          <a href="#" class="hire">Create Server</a>
+     </div>
+     <ul class="list-group">
+         @if (Model != null)
+         {
+         foreach (var room in Model)
+         {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @room 
+                    <span class="badge badge-primary badge-pill badge-custom">14</span>
+                    </li> 
+         }
+         }
+          @*<li class="list-group-item d-flex justify-content-between align-items-center">
+               Cras justo odio
+               <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+               Dapibus ac facilisis in
+               <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+               Morbi leo risus
+               <span class="badge badge-primary badge-pill">1</span>
+          </li>*@
+     </ul>
 </body>
 </html>
