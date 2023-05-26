@@ -1,45 +1,44 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - HangMan</title>
-    
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>@ViewBag.Title - HangMan</title>
+
 
 </head>
 <body class="accordion-body">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-        <div class="container-fluid">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                 <ul class="navbar-nav me-auto">
-                      <li class="nav-item">
-                           @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
-                      </li>
-                      <li class="nav-item">
-                           @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
-                      </li>
-                      <li class="nav-item">
-                           @Html.ActionLink("How To Play", "How_To_Play", "Home", null, new { @class = "nav-link text-nowrap" })
-                      </li>
-                      <li class="nav-item">
-                           @Html.ActionLink("Game", "HMan", "Home", null, new { @class = "nav-link" })
-                      </li>
-                 </ul>
-            </div>
-            <div class="me-sm-3">
-                <div class="switch">
-                    <label for="toggle">
-                        <input id="toggle" class="toggle-switch" type="checkbox" />
-                        <div class="sun-moon">
-                            <div class="dots"></div>
-                        </div>
-                        <div class="background"><div class="stars1"></div><div class="stars2"></div></div>
-                    </label>
-                </div>
-            </div>
-            <div class="mx-auto ">
-                @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+          <div class="container-fluid">
+               <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                    <ul class="navbar-nav me-auto">
+                         <li class="nav-item">
+                              @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                         </li>
+                         <li class="nav-item">
+                              @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
+                         </li>
+                         <li class="nav-item">
+                              @Html.ActionLink("How To Play", "How_To_Play", "Home", null, new { @class = "nav-link text-nowrap" })
+                         </li>
+                         <li class="nav-item">
+                              @Html.ActionLink("Game", "Index", "Server", null, new { @class = "nav-link" })
+                         </li>
+                    </ul>
+               </div>
+               <div class="me-sm-3">
+                    <div class="switch">
+                         <label for="toggle">
+                              <input id="toggle" class="toggle-switch" type="checkbox" />
+                              <div class="sun-moon">
+                                   <div class="dots"></div>
+                              </div>
+                              <div class="background"><div class="stars1"></div><div class="stars2"></div></div>
+                         </label>
+                    </div>
+               </div>
+               <div class="mx-auto ">
+                    @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -55,5 +54,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
