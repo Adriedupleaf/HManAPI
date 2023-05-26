@@ -1,1 +1,52 @@
 ﻿
+.hero {
+    background: #ffffff;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    padding: 3rem calc((100vw - 1300px) / 2);
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #000;
+    padding: 0rem 2rem;
+}
+
+    .column-left h1 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+    }
+
+    .column-left p {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #7dcfe3;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+    button:hover {
+        background: #fff;
+        color: #000;
+    }
+
+@media screen and (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+}
