@@ -50,6 +50,6 @@ namespace HManAPI.Controllers
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             list = JsonConvert.DeserializeObject<List<ServerModel>>(response.Body);
         }
-
+        
     }
 }

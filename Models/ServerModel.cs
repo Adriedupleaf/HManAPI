@@ -13,4 +13,5 @@ namespace HManAPI.Models
         public string word { get; set; }
         public string name { get; set; }
     }
+
 }
