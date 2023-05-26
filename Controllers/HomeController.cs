@@ -25,17 +25,7 @@ namespace HManAPI.Controllers
             ViewBag.Message = "How To play page.";
             return View();
         }
-        [Authorize]
-        public ActionResult HMan()
-        {
-            List<string> list = new List<string>()
-            {
-                 "Name1",
-                 "Name2"
-            };
-            ViewBag.Message = "HangMan";
-            return View(list);
-        }
+        
 
      }
 }

@@ -1,4 +1,4 @@
-@model List<string> 
+@model IEnumerable<HManAPI.Models.ServerModel>
 
 @{
 
@@ -34,11 +34,21 @@
      <ul class="list-group">
          @if (Model != null)
          {
-         foreach (var room in Model)
+         foreach (var server in Model)
          {
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                    @room 
-                    <span class="badge badge-primary badge-pill badge-custom">14</span>
+                        @server.name 
+                        <span class="badge badge-primary badge-pill badge-custom">
+                            @if (server.isPublic == true)
+                            {
+                                @Html.ActionLink("Join", "Play", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm" })
+                            }
+                            else
+                            {
+                                
+                                @Html.ActionLink("Join", "Play", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-secondary btn-sm" })
+                            }
+                        </span>
                     </li> 
          }
          }
