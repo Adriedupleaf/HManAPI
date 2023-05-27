@@ -95,6 +95,7 @@ namespace HManAPI.Controllers
             }
 
             // If we got this far, something failed, redisplay form
+            ModelState.AddModelError(string.Empty, "Invalid username or password.");
             return this.View(model);
         }
         private void SignInUser(string email, string token, bool isPersistent)
