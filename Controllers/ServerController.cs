@@ -2,18 +2,11 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using HManAPI.Models;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using System.Security.Claims;
 using Microsoft.AspNet.Identity;
-using FireSharp.Extensions;
+using System;
 
 namespace HManAPI.Controllers
 {
@@ -40,10 +33,41 @@ namespace HManAPI.Controllers
                 return View();
             else return this.RedirectToAction("Index", "Server");
         }
+        [HttpGet]
         public ActionResult CreateServer()
         {
-            
+
             return View();
+        }
+        [HttpPost]
+        public ActionResult CreateServer(ServerModel server)
+        {
+
+            try
+            {
+                // Verification.
+                if (ModelState.IsValid)
+                {
+                    client = new FireSharp.FirebaseClient(config);
+                    list = updateServers();
+                    SetResponse response = client.Set("Servers/" + list.Count, server);
+                    var newsession = new Session()
+                    {
+                        serverName = server.name,
+                        user = User.Identity.GetUserName()
+                    };
+                    client.Set("Session/" + list.Count, newsession);
+                    return RedirectToAction("Play", "Server", server);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Info
+                Console.Write(ex);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return this.View(server);
         }
         public List<ServerModel> updateServers()
         {
@@ -60,8 +84,6 @@ namespace HManAPI.Controllers
             foreach (var item in res1)
             {
                 if (item.serverName == sv.name) return true;
-                else
-                    return false;
             }
             return false;
             
