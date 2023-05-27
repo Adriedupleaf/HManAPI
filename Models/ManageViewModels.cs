@@ -42,6 +42,11 @@ namespace HManAPI.Models
     public class ChangePasswordViewModel
     {
         [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email Address")]
+        public string Email { get; set; }
+
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]
         public string OldPassword { get; set; }

@@ -30,7 +30,8 @@ namespace HManAPI
                       "~/Content/ThemeSwitch.css",
                       "~/Content/Keyboard.css",
                       "~/Content/Game.css",
-                      "~/Content/About.css"));
-          }
+                      "~/Content/About.css",
+                      "~/Content/AccountManage.css"));
+        }
     }
 }
