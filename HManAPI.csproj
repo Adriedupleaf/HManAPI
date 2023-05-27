@@ -298,6 +298,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\About.css" />
+    <Content Include="Content\AccountManage.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -352,6 +353,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Scripts\jquery-3.6.4.intellisense.js" />
     <Content Include="Scripts\Keyboard.js" />
+    <Content Include="Scripts\SendEmail.js" />
     <Content Include="Scripts\ThemeSwitch.js" />
     <Content Include="Scripts\jquery-3.6.4.js" />
     <Content Include="Scripts\jquery-3.6.4.min.js" />

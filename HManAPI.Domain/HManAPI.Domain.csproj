@@ -74,6 +74,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\User\UChangePasswordData.cs" />
     <Compile Include="Entities\User\ULoginResponse.cs" />
     <Compile Include="Enums\URoles.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
