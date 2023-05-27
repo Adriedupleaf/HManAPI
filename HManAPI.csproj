@@ -298,7 +298,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\About.css" />
-    <Content Include="Content\AccountManage.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
