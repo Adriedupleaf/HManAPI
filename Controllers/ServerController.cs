@@ -11,6 +11,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Security.Claims;
+using Microsoft.AspNet.Identity;
+using FireSharp.Extensions;
 
 namespace HManAPI.Controllers
 {
@@ -23,32 +26,45 @@ namespace HManAPI.Controllers
         };
         IFirebaseClient client;
         List<ServerModel> list;
-        public ServerController() {
-            updateServers();
-        }
         // GET: Server
         [Authorize]
         public ActionResult Index()
         {
-            
+            list = updateServers();
             return View(list);
         }
-        public ActionResult Play()
+        //[HttpPost]
+        public ActionResult Play(ServerModel sv)
         {
-            
-            return View();
+            if (checkSesion(sv, User.Identity.GetUserName()))
+                return View();
+            else return this.RedirectToAction("Index", "Server");
         }
         public ActionResult CreateServer()
         {
             
             return View();
         }
-        public void updateServers()
+        public List<ServerModel> updateServers()
         {
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("Servers");
-            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
-            list = JsonConvert.DeserializeObject<List<ServerModel>>(response.Body);
+            return JsonConvert.DeserializeObject<List<ServerModel>>(response.Body);
+        }
+        public bool checkSesion(ServerModel sv,string user)
+        {
+            list = updateServers();
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Session");
+            var res1 = JsonConvert.DeserializeObject<List<Session>>(response.Body);
+            foreach (var item in res1)
+            {
+                if (item.serverName == sv.name) return true;
+                else
+                    return false;
+            }
+            return false;
+            
         }
 
     }

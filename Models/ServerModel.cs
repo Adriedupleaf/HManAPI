@@ -12,5 +12,11 @@ namespace HManAPI.Models
         public bool isPublic { get; set; }
         public string word { get; set; }
         public string name { get; set; }
+        public int players { get; set; }
+    }
+    public class Session
+    {
+        public string serverName { get; set; }
+        public string user { get; set; }
     }
 }
