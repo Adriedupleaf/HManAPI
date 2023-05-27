@@ -39,25 +39,21 @@
                </div>
                <div class="mx-auto ">
                     @Html.ActionLink("HangMan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
-                         <span class="navbar-toggler-icon"></span>
-                    </button>
-               </div>
-               @Html.Partial("_LoginPartial")
-          </div>
-     </nav>
-     <div class="container body-content">
-          @RenderBody()
-
-          <footer>
-               <p>&copy; @DateTime.Now.Year - HangMan</p>
-          </footer>
-     </div>
-     @Styles.Render("~/Content/css")
-     @Scripts.Render("~/bundles/modernizr")
-     @Scripts.Render("~/bundles/jquery")
-     @Scripts.Render("~/bundles/bootstrap")
-     @RenderSection("scripts", required: false)
 </body>
 </html>
