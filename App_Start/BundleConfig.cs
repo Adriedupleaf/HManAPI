@@ -21,12 +21,14 @@ namespace HManAPI
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/Keyboard.js",
                       "~/Scripts/ThemeSwitch.js"));
 
             bundles.Add(new Bundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
                       "~/Content/ThemeSwitch.css",
+                      "~/Content/Keyboard.css",
                       "~/Content/Game.css",
                       "~/Content/About.css"));
           }

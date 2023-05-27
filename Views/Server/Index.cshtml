@@ -41,12 +41,12 @@
                         <span class="badge badge-primary badge-pill badge-custom ">
                             @if (server.isPublic == true)
                             {
-                                @Html.ActionLink("Join", "Play", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm" })
+                                @Html.ActionLink("Join", "Play", "Server", routeValues: new { server.name,server.isPublic,server.password,server.players,server.word }, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm" })
                             }
                             else
                             {
                                 
-                                @Html.ActionLink("Join", "Play", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-secondary btn-sm" })
+                                @Html.ActionLink("Join", "Play", "Server", routeValues: new { server.name, server.isPublic, server.password, server.players, server.word }, htmlAttributes: new { @class = "btn btn-outline-secondary btn-sm" })
                             }
                         </span>
                     </li> 
