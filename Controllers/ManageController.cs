@@ -8,10 +8,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HManAPI.Models;
-using System.Web.UI.WebControls;
-using Firebase.Auth;
-using HManAPI.Domain.Entities.User;
-using User = Firebase.Auth.User;
 
 namespace HManAPI.Controllers
 {
@@ -22,14 +18,12 @@ namespace HManAPI.Controllers
         {
         }
 
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangePassword(UChangePasswordData Model, string returnUrl)
+
+
+        //
+        // GET: /Manage/ChangePassword
+        public ActionResult ChangePassword()
         {
-            var auth = new FirebaseAuthProvider(new FirebaseConfig(WebApiConfig.getApiKey()));
-            var cp = auth.SignInWithEmailAndPasswordAsync(Model.Email, Model.OldPassword);
-            
             return View();
         }
 
