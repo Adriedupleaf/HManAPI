@@ -40,11 +40,20 @@ namespace HManAPI.Controllers
                 return View();
             else return this.RedirectToAction("Index", "Server");
         }
-        public ActionResult CreateServer()
+        
+        [HttpGet]
+        public ActionResult CreateServer(string returnUrl)
         {
             
             return View();
         }
+        [HttpPost]
+        public ActionResult CreateServer(ServerModel server, string returnUrl)
+        {
+
+            return View();
+        }
+
         public List<ServerModel> updateServers()
         {
             client = new FireSharp.FirebaseClient(config);
@@ -60,8 +69,6 @@ namespace HManAPI.Controllers
             foreach (var item in res1)
             {
                 if (item.serverName == sv.name) return true;
-                else
-                    return false;
             }
             return false;
             

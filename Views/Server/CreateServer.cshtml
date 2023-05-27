@@ -1,43 +1,50 @@
-﻿
-@{
-     ViewBag.Title = "Create Server";
-}
-<!DOCTYPE html>
-<!---Coding By CoderGirl!--->
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <!--<title> An About Us Page | CoderGirl </title>-->
-     <!---Custom Css File!--->
-     <link rel="stylesheet" href="About.css">
-     <link href="~/Scripts/ChechBoxScript.js" />
-</head>
-<body>
-     <form>
-          <div class="form-group">
-               <label for="exampleFormControlInput1">Server Name</label>
-               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Server Name">
-          </div>
-          <div class="form-group">
-               <label for="exampleFormControlSelect1">Player Number</label>
-               <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-               </select>
-          </div>
-          <div class="form-group">
-               <label for="exampleInputPassword1">Password</label>
-               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-     </form>
-     <div class="data">
-          <a href="#" class="hire">Create Server</a>
-     </div>
-</body>
+﻿@using HManAPI.Models
+@model HManAPI.Models.ServerModel
 
-</html>
+@{
+    ViewBag.Title = "Create Server";
+}
+
+<form>
+    @using (Html.BeginForm("CreateServer", "Server", new { server = Model }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.players, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(m => m.players, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.players, "", new { @class = "text-danger" })
+
+    </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10-allign-center">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.isPublic)
+                    @Html.LabelFor(m => m.isPublic)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.password, new { @class = "col-md-2 control-label" })
+            @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-4">
+            Create
+        </button>
+    }
+</form>
+<div class="data">
+    @*Html.ActionLink("Create Server", "Play", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg btn-block " })*@
+
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
