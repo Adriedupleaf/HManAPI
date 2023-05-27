@@ -9,6 +9,8 @@
     width: 100%;
     padding: 90px 0;
     background: #ddd;
+    border: 1px solid;
+    margin-top: 15px;
 }
 
 .pic {
