@@ -1,0 +1,25 @@
+﻿/* this is a CSS comment, it needs both the starting and finishing '/*'s */
+body,
+#container {
+    text-align: center;
+    margin: 20px;
+    font-family: monospace;
+    font-size: 1.5em;
+    color: #111;
+    /*background: url(https://images.lingscars.com/images/index/bg/paisley.jpg);*/
+}
+
+#container {
+    margin: 10px auto;
+}
+
+#won {
+    color: red;
+    font-size: 3em;
+    font-weight: bold;
+    /*color: #F60050; CSS stands for cascading style sheet - the last change has piroity. */
+}
+
+#dashes {
+    font-size: 3em;
+}
