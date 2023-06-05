@@ -280,6 +280,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -399,7 +400,7 @@
     <Content Include="Scripts\jquery-3.6.4.min.map" />
     <Content Include="Views\Server\Index.cshtml" />
     <Content Include="Views\Home\How_To_Play.cshtml" />
-    <Content Include="Views\Server\Play.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Server\CreateServer.cshtml" />
   </ItemGroup>
   <ItemGroup>

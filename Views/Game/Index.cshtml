@@ -1,6 +1,21 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Play";
 }
+</script>
+<div class="justify-content-center">
+    <hr />
+    <table class="table text-center">
+        <tr>
+            @foreach (char a in ViewBag.word)
+            {
+                <td>
+                    <p class="fs-2 text-uppercase">@a</p>
+                </td>
+            }
+        </tr>
+    </table>
+</div>
 
 <div class="keyboard_wrapper">
         <div class="key">
@@ -35,8 +50,8 @@
             <span data-key="B">B</span>
             <span data-key="N">N</span>
             <span data-key="M">M</span>
-            
+
         </div>
-        
+
     </div>
 </div>

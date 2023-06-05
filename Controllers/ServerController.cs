@@ -26,13 +26,7 @@ namespace HManAPI.Controllers
             list = updateServers();
             return View(list);
         }
-        //[HttpPost]
-        public ActionResult Play(ServerModel sv)
-        {
-            if (checkSesion(sv, User.Identity.GetUserName()))
-                return View();
-            else return this.RedirectToAction("Index", "Server");
-        }
+       
         [HttpGet]
         public ActionResult CreateServer()
         {
@@ -40,6 +34,8 @@ namespace HManAPI.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateServer(ServerModel server)
         {
 
@@ -51,13 +47,18 @@ namespace HManAPI.Controllers
                     client = new FireSharp.FirebaseClient(config);
                     list = updateServers();
                     SetResponse response = client.Set("Servers/" + list.Count, server);
-                    var newsession = new Session()
+                    var newsession = new Session();
+                    Users newUser = new Users{
+                        name = User.Identity.GetUserName(),
+                        role = "Owner"
+                    };
+                    newsession.serverName = server.name;
+                    newsession.users = new List<Users>
                     {
-                        serverName = server.name,
-                        user = User.Identity.GetUserName()
+                        newUser
                     };
                     client.Set("Session/" + list.Count, newsession);
-                    return RedirectToAction("Play", "Server", server);
+                    return RedirectToAction("Index", "Game",new { serverName = server.name});
                 }
             }
             catch (Exception ex)
@@ -65,7 +66,7 @@ namespace HManAPI.Controllers
                 // Info
                 Console.Write(ex);
             }
-
+            ModelState.AddModelError(string.Empty, "Error.");
             // If we got this far, something failed, redisplay form
             return this.View(server);
         }
@@ -75,18 +76,6 @@ namespace HManAPI.Controllers
             FirebaseResponse response = client.Get("Servers");
             return JsonConvert.DeserializeObject<List<ServerModel>>(response.Body);
         }
-        public bool checkSesion(ServerModel sv,string user)
-        {
-            list = updateServers();
-            client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Get("Session");
-            var res1 = JsonConvert.DeserializeObject<List<Session>>(response.Body);
-            foreach (var item in res1)
-            {
-                if (item.serverName == sv.name) return true;
-            }
-            return false;
-            
-        }
+        
     }
 }

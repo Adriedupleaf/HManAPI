@@ -17,6 +17,11 @@ namespace HManAPI.Models
     public class Session
     {
         public string serverName { get; set; }
-        public string user { get; set; }
+        public List<Users> users { get; set; }
+    }
+    public class Users
+    {
+        public string name { get; set; }
+        public string role { get; set; }
     }
 }

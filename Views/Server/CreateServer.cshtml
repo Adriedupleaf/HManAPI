@@ -7,6 +7,7 @@
 
 @using (Html.BeginForm("CreateServer", "Server", Model, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
@@ -20,6 +21,12 @@
 
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.word, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(m => m.word, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.word, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="form-group">
         <div class="col-md-offset-2 col-md-10-allign-center">
             <div class="checkbox">
                 @Html.CheckBoxFor(m => m.isPublic)
@@ -27,11 +34,14 @@
             </div>
         </div>
     </div>
+    
     <div class="form-group">
         @Html.LabelFor(m => m.password, new { @class = "col-md-2 control-label" })
-        @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.password, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+        <br />
     </div>
+    
 
     <button type="submit" class="btn btn-primary btn-block mb-4">
         Create
