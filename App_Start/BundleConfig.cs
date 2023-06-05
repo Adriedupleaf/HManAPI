@@ -22,7 +22,8 @@ namespace HManAPI
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/Keyboard.js",
-                      "~/Scripts/ThemeSwitch.js"));
+                      "~/Scripts/ThemeSwitch.js",
+                      "~/Scripts/SendEmail.js"));
 
             bundles.Add(new Bundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -30,7 +31,8 @@ namespace HManAPI
                       "~/Content/ThemeSwitch.css",
                       "~/Content/Keyboard.css",
                       "~/Content/Game.css",
-                      "~/Content/About.css"));
+                      "~/Content/About.css",
+                      "~/Content/AccountManage.css"));
           }
     }
 }
