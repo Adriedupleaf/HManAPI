@@ -2,11 +2,6 @@
 @{
     Layout = null;
 }
-@section JavaScript {
-
-    <script type="text/javascript" src="@Url.Content("/Scripts/Game.js")"></script>
-
-}
 <html>
 
 <head>
@@ -18,6 +13,7 @@
 </head>
 
 <body>
+    @Request.Params["serverName"]
     <!--this is a HTML comment-->
     <div id="container">
         <h2>Hangman</h2>
@@ -29,6 +25,8 @@
         <input onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" autofocus>
 
         <br />
+
+
         <!-- <img src="https://images.lingscars.com/images/index/ling-face.png">-->
         <script>
             // this is a javascript comment, the double slash turns one line into a comment
@@ -41,7 +39,7 @@
 
             // varible declarations
             var words = [
-                "@ViewBag.word"                
+                "@ViewBag.word"
             ]; // change this list to change the words used.
             var theWord = words[Math.floor(Math.random() * words.length)].toLowerCase(); // choose random word, make lowercase.
             // match html elements to varibles for ease.
@@ -108,4 +106,10 @@
             }
 
         </script>
+    </div>
+    @using (Html.BeginForm("leaveSession", "Game", new { sv=Request.Params["serverName"] }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <button type="submit" id="button1" >Leave Game</button>
+
+    }
 </body>

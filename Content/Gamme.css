@@ -23,3 +23,18 @@ body,
 #dashes {
     font-size: 3em;
 }
+#button1 {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #7dcfe3;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50px;
+   
+}
+
+    #button1:hover {
+        background: #fff;
+        color: #000;
+    }

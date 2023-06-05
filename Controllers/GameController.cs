@@ -34,6 +34,20 @@ namespace HManAPI.Controllers
             }
             else return this.RedirectToAction("Index", "Server");
         }
+        public ActionResult leaveSession(string sv) {
+            client = new FireSharp.FirebaseClient(config);
+            var users = checkSesion(sv).users;
+            var userid = getUserId(users);
+            if (users[userid].role == "Owner")
+            {
+                var id = getSessionsId(sv);
+                client.Delete("Session/" + id);
+                client.Delete("Servers/" + id);
+
+            }
+            else client.Delete("Session/" + getSessionsId(sv) + "/users/" + getUserId(users));
+            return this.RedirectToAction("Index", "Server");
+        }
         public void addUserToSession(string serverName)
         {
             var session = checkSesion(serverName);
@@ -109,18 +123,10 @@ namespace HManAPI.Controllers
             return false;
 
         }
-        public void leaveSession(string sv)
+        public void sleaveSession(string sv)
         {
-            client = new FireSharp.FirebaseClient(config);
-            var users = checkSesion(sv).users;
-            var userid = getUserId(users);
-            if (users[userid].role == "Owner")
-            {
-                client.Delete("Session/" + getSessionsId(sv));
-
-            }else client.Delete("Session/" + getSessionsId(sv)+"/users/"+getUserId(users));
+            
 
         }
-        public static object lol (string sv) { return sv; }
     }
 }
