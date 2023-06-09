@@ -46,8 +46,12 @@
             @Html.Partial("_LoginPartial")
         </div>
     </nav>
-    <div class="container body-content">
-        @RenderBody()
+    <div class="container body-content" style="margin-left: 0; background: lightblue; ">
+        <div class="paper">
+            <div class="lines">
+                @RenderBody()
+            </div>
+        </div>
     </div>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")

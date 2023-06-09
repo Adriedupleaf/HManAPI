@@ -12,22 +12,9 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <!--<title> An About Us Page | CoderGirl </title>-->
-     <!---Custom Css File!--->
-     @*<link rel="stylesheet" href="About.css">*@
      <link rel="stylesheet" href="Game.css">
 </head>
 <body>
-     @*<section class="about-us">
-               <div class="about">
-                    @foreach(var letter in ViewBag.Message)
-                    {
-                         <div class="input-box">
-                              <input type="text" />
-                         </div>
-                    }
-               </div>
-          </section> *@
     <div class="data">
         @Html.ActionLink("Create Server", "CreateServer", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg btn-block " })
     </div>
@@ -53,6 +40,12 @@
                             {
                                 using (Html.BeginForm("Index", "Game", new { serverName = server.name }, FormMethod.Post, new { @class = "", role = "form" }))
                                 {
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => server.password, new { @class = "col-md-2 control-label" })
+                                        @Html.TextBoxFor(m => server.password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => server.password, "", new { @class = "text-danger" })
+                                        <br />
+                                    </div>
                                     <button type="submit" class="btn btn-outline-secondary btn-sm">
                                         Join
                                     </button>

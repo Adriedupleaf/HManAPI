@@ -1,7 +1,4 @@
 ﻿
-.hero {
-    background: #ffffff;
-}
 
 .hero-container {
     display: grid;
@@ -16,7 +13,7 @@
     justify-content: center;
     align-items: flex-start;
     color: #000;
-    padding: 0rem 2rem;
+    padding: 0rem 5rem;
 }
 
     .column-left h1 {
@@ -49,4 +46,44 @@
     .hero-container {
         grid-template-columns: 1fr;
     }
+}
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+.bodd {
+    margin: 0;
+    padding: 0;
+    background: lightblue;
+}
+
+.paper {
+    position: absolute;
+    background: rgba(255,255,255,0.9);
+    width: 98%;
+}
+
+    .paper::before {
+        content: '';
+        position: absolute;
+        left: 45px;
+        height: 100%;
+        width: 2px;
+        background: rgba(255,0,0,0.4);
+    }
+
+.lines {
+    margin-top: 15px;
+    height: calc(100% - 40px);
+    width: 100%;
+    background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
+}
+
+.textt {
+    position: absolute;
+    top: 65px;
+    left: 55px;
+    bottom: 10px;
+    right: 10px;
+    line-height: 25px;
+    font-family: 'Indie Flower';
+    overflow: hidden;
+    outline: none;
 }
