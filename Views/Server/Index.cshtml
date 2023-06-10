@@ -65,10 +65,12 @@
                         </div>
                         <div class="card-footer border-0 bg-light p-2 d-flex justify-content-around">
                             @using (Html.BeginForm("Index", "Game", new { serverName = server.name }, FormMethod.Post, new { @class = "d-grid gap-2", role = "form" }))
-                            {
+                                        {
+                                            
                                 <div class="input-group mb-0">
                                     <input type="text" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Join  |  Players 1/@server.players</button>
+                                    
                                 </div>
                             }
                         </div>

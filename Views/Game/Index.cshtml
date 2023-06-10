@@ -95,12 +95,14 @@
                         document.querySelector("#won").innerHTML = "You Won!";
                         //input.removeEventListener("input", userGuess);
                         setTimeout(function () {
+                            input.disabled = true;
                             console.log("game over");
                         }, 3000);
                     }
                     //check if the player has used more than 12 guesses. does not force game refresh
-                    if (count > 12) {
+                    if (count > 6) {
                         document.querySelector("#won").innerHTML = "You lost!";
+                        input.disabled = true;
                     }
                 }
             }

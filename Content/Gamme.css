@@ -15,7 +15,7 @@ body,
 
 #won {
     color: red;
-    font-size: 3em;
+    font-size: 1em;
     font-weight: bold;
     /*color: #F60050; CSS stands for cascading style sheet - the last change has piroity. */
 }

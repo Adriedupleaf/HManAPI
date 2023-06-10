@@ -10,7 +10,6 @@ namespace HManAPI.Models
     {
         //public int id { get; set; }
         [Display(Name = "Password")]
-        [StringLength(50, ErrorMessage = "The {0} must be at least {4} characters long.", MinimumLength = 4)]
 
         public string password { get; set; }
         [Display(Name = "Is public?")]
@@ -25,7 +24,6 @@ namespace HManAPI.Models
 
         public string name { get; set; }
         [Required]
-        [Range(1, 8, ErrorMessage = "Value for {0} must be between {1} and {8}.")]
         [Display(Name = "Number of Players")]
 
         public int players { get; set; }
