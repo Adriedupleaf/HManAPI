@@ -2,61 +2,79 @@
 
 @{
 
-     ViewBag.Title = "Game";
+    ViewBag.Title = "Game";
 
 }
-<!DOCTYPE html>
-<!---Coding By CoderGirl!--->
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <link rel="stylesheet" href="Game.css">
-</head>
-<body>
-    <div class="data">
-        @Html.ActionLink("Create Server", "CreateServer", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg btn-block " })
+<div class="row m-5 justify-content-center align-items-center align-content-center align-self-center">
+    <div class="col-xl-4 mb-4">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="d-flex justify-content-center align-items-center align-content-center align-self-center">
+                    @Html.ActionLink("Create Server", "CreateServer", "Server", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg btn-block" })
+                </div>
+            </div>
+        </div>
     </div>
-     <ul class="list-group">
-         @if (Model != null)
-         {
-         foreach (var server in Model)
-         {
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        @server.name 
-                        <span class="badge badge-primary badge-pill badge-custom ">
-                            @if (server.isPublic == true)
-                            {
-                                using (Html.BeginForm("Index", "Game", new { serverName = server.name }, FormMethod.Post, new { @class = "", role = "form" }))
-                                {
-                                    <button type="submit" class="btn btn-outline-primary btn-sm">
-                                        Join
-                                    </button>
-                                }
-                                @*@Html.ActionLink("Join", "Play", "Server", routeValues: new { server.name, server.isPublic, server.password, server.players, server.word }, htmlAttributes: new { @class = "btn btn-outline-primary btn-sm" })*@
-                            }
-                            else
-                            {
-                                using (Html.BeginForm("Index", "Game", new { serverName = server.name }, FormMethod.Post, new { @class = "", role = "form" }))
-                                {
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => server.password, new { @class = "col-md-2 control-label" })
-                                        @Html.TextBoxFor(m => server.password, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => server.password, "", new { @class = "text-danger" })
-                                        <br />
+</div>
+<div class="row  m-5">
+    @if (Model != null)
+    {
+        foreach (var server in Model)
+        {
+            if (server.isPublic == true)
+            {
+                <div class="col-xl-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex align-items-center text-center">
+                                    <div class="ms-0 justify-content-center">
+                                        <p class="fw-bold h3 mb-1">@server.name</p>
+                                        <p class="text-muted h6 mb-0">Public</p>
                                     </div>
-                                    <button type="submit" class="btn btn-outline-secondary btn-sm">
-                                        Join
-                                    </button>
-                                }
-                                @*@Html.ActionLink("Join", "Play", "Server", routeValues: new { server.name, server.isPublic, server.password, server.players, server.word }, htmlAttributes: new { @class = "btn btn-outline-secondary btn-sm" })*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer border-0 bg-light p-2 d-flex justify-content-around">
+
+                            @using (Html.BeginForm("Index", "Game", new { serverName = server.name }, FormMethod.Post, new { @class = "d-grid gap-2", role = "form" }))
+                            {
+                                <button type="submit" class="btn btn-outline-primary ">
+                                    Join  |  Players 1/@server.players
+                                </button>
                             }
-                        </span>
-                    </li> 
-         }
-         }
-          
-     </ul>
-</body>
-</html>
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="col-xl-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex align-items-center text-center">
+                                    <div class="ms-0 justify-content-center">
+                                        <p class="fw-bold h3 mb-1">@server.name</p>
+                                        <p class="text-muted h6 mb-0">Private</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer border-0 bg-light p-2 d-flex justify-content-around">
+                            @using (Html.BeginForm("Index", "Game", new { serverName = server.name }, FormMethod.Post, new { @class = "d-grid gap-2", role = "form" }))
+                            {
+                                <div class="input-group mb-0">
+                                    <input type="text" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Join  |  Players 1/@server.players</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+    </div>

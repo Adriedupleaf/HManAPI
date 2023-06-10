@@ -1,16 +1,6 @@
-﻿* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-.about-us {
-    height: 100vh;
+﻿.about-us {
     width: 100%;
-    padding: 90px 0;
-    background: #ddd;
-    border: 1px solid;
-    margin-top: 15px;
+    padding-left:50px;
 }
 
 .pic {
