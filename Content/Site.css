@@ -57,7 +57,7 @@
     position: absolute;
     background: rgba(255,255,255,0.9);
     width: 98%;
-    height: 91%;
+    height: 100%;
 }
 
     .paper::before {
